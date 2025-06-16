@@ -1,0 +1,153 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android./tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8A2BE2">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/rounded_topbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/toolbar_profile"
+        app:navigationIcon="@drawable/arrow_back"
+        app:navigationIconTint="#8A2BE2"
+        app:title="@string/app_name"
+        app:titleTextColor="#8A2BE2" />
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="125dp"
+        android:layout_height="107dp"
+        android:layout_marginBottom="40dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/logo_lucia_blu"
+        app:layout_constraintBottom_toTopOf="@+id/mainContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <LinearLayout
+        android:id="@+id/mainContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/rounded_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:focusable="true"
+            android:padding="2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_profile" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/defaltu"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#8A2BE2"
+            android:layout_marginTop="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_container"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/position"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#8A2BE2" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/classifica"
+                    android:textSize="14sp"
+                    android:textColor="#8A2BE2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_container"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/punti"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#8A2BE2" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/points"
+                    android:textSize="14sp"
+                    android:textColor="#8A2BE2" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/etBio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="description"
+            android:background="@drawable/rounded_container"
+            android:text="@string/description"
+            android:textSize="14sp"
+            android:textColor="#8A2BE2"
+            android:layout_marginTop="12dp"
+            android:padding="12dp"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:maxLines="5" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgPeople"
+        android:layout_width="283dp"
+        android:layout_height="195dp"
+        android:layout_marginTop="68dp"
+        android:contentDescription="@string/people"
+        android:src="@drawable/peope"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainContainer">
+    </ImageView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

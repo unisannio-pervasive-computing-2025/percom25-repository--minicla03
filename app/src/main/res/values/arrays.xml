@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Frequenza Notifiche -->
+    <string-array name="notification_frequency_entries">
+        <item>Ogni giorno</item>
+        <item>Ogni 3 giorni</item>
+        <item>Ogni settimana</item>
+    </string-array>
+
+    <string-array name="notification_frequency_values">
+        <item>daily</item>
+        <item>every_3_days</item>
+        <item>weekly</item>
+    </string-array>
+
+    <!-- Opzioni Tema -->
+    <string-array name="theme_options">
+        <item>Chiaro</item>
+        <item>Scuro</item>
+        <item>Sistema</item>
+    </string-array>
+
+    <string-array name="theme_values">
+        <item>light</item>
+        <item>dark</item>
+        <item>system</item>
+    </string-array>
+
+    <string-array name="expense_categories">
+        <item>🧾 Seleziona categoria</item>
+        <item>Cibo</item>
+        <item>Trasporti</item>
+        <item>Intrattenimento</item>
+        <item>Shopping</item>
+        <item>Salute</item>
+        <item>Bollette</item>
+        <item>Altro</item>
+    </string-array>
+
+    <string-array name="compito_types">
+        <item>🧾 Seleziona tipo di compito</item>
+        <item>🧹 Cleaning</item>
+        <item>🔧 Maintenance</item>
+        <item>🛠️ Repair</item>
+    </string-array>
+
+</resources>

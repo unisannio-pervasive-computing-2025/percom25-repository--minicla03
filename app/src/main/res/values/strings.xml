@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name" translatable="false">CoinquyLife</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="login">Login</string>
+    <string name="register">Registration</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+
+    <string name="new_coinquy_house">New Coinquy House</string>
+    <string name="join_to_coinquy_house">Join to Coinquy House</string>
+    <string name="coinquyhouse_id">CoinquyHouse id</string>
+    <string name="id">ID</string>
+    <string name="inserisci_id_della_casa">Insert iD CoinquyHouse</string>
+    <string name="id_house">House Id</string>
+    <string name="Confirm">Confirm</string>
+    <string name="Next">Next</string>
+    <string name="house_name">House name</string>
+
+    <string name="turni">🗓️ Turni</string>
+    <string name="Exspese">💸 Spese</string>
+    <string name="home">🏠 Home</string>
+    <string name="rank">🏆 Classifica</string>
+    <string name="board">📋 Bacheca</string>
+
+    <string name="setting">Setting\n</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="expenseRV">espenseRV</string>
+    <string name="profile_picture">profile imagine</string>
+    <string name="option_on">option on</string>
+    <string name="option_off">option off</string>
+    <string name="summary_default">summary</string>
+    <string name="copy_id">string copy</string>
+    <string name="defaltu">user\n</string>
+    <string name="note">note\n</string>
+    <string name="username_or_email">Username or password\n</string>
+    <string name="login_icon_description">login icon app</string>
+    <string name="non_hai_un_account_registrati">Non hai un account? Registrati\n\n</string>
+    <string name="coinquylife">CoinquyLife</string>
+    <string name="hai_un_account_loggati">Hai gia un account? Loggati</string>
+    <string name="back">back button</string>
+    <string name="classifica">Classifica</string>
+    <string name="position">n position</string>
+    <string name="punti">n_punti</string>
+    <string name="points">Punti</string>
+    <string name="description">Studente fuori sede...</string>
+    <string name="people">people</string>
+    <string name="address">Address\n</string>
+    <string name="registra_nuova_casa">Registra nuova casa\n</string>
+    <string name="riepilogo_bilancio">Riepilogo Bilancio</string>
+    <string name="seleziona_coinquilino">Seleziona Coinquilino</string>
+    <string name="chi_ha_pagato">Chi ha pagato?</string>
+    <string name="aggiungi_nuova_spesa">Aggiungi nuova spesa</string>
+    <string name="descrizione">Descrizione</string>
+    <string name="importo">Importo €</string>
+    <string name="partecipanti">Partecipanti</string>
+    <string name="annulla">Annulla</string>
+    <string name="conferma">Conferma</string>
+    <string name="dettagli_spese">Dettagli Spese</string>
+    <string name="riepilogo_spese">Riepilogo Spese</string>
+    <string name="calendar">calendar\n</string>
+    <string name="gestione_turni_e_task">Gestione Turni e Task</string>
+    <string name="inserisci_indisponibilit">Inserisci Indisponibilità</string>
+    <string name="inizio_indisponibilit">Inizio Indisponibilità</string>
+    <string name="data_inizio_yyyy_mm_dd_hh_mm">Data inizio (yyyy-MM-dd HH:mm)</string>
+    <string name="data_fine_yyyy_mm_dd_hh_mm">Data fine (yyyy-MM-dd HH:mm)</string>
+    <string name="salva_indisponibilit">Salva Indisponibilità</string>
+    <string name="crea_compito">🧼 Crea Compito</string>
+    <string name="data_e_ora_compito">Data e ora compito</string>
+    <string name="aggiungi_compito">Aggiungi Compito</string>
+    <string name="calendario_turni">📅 Calendario Turni</string>
+    <string name="qui_verranno_mostrati_i_turni_assegnati_ai_coinquilini">Qui verranno mostrati i turni assegnati ai coinquilini.</string>
+    <string name="descrizione_del_compito">Descrizione del compito</string>
+</resources>

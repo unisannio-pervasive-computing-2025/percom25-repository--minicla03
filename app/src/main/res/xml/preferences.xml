@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Categoria: Notifiche -->
+    <PreferenceCategory android:title="Notifiche">
+
+        <CheckBoxPreference
+            android:key="notifications_enabled"
+            android:title="Abilita notifiche"
+            android:summary="Ricevi promemoria per i turni, messaggi e aggiornamenti"
+            android:defaultValue="true" />
+
+        <ListPreference
+            android:key="notification_frequency"
+            android:title="Frequenza notifiche"
+            android:summary="Seleziona ogni quanto ricevere promemoria"
+            android:entries="@array/notification_frequency_entries"
+            android:entryValues="@array/notification_frequency_values"
+            android:defaultValue="daily" />
+    </PreferenceCategory>
+
+    <!-- Categoria: Aspetto -->
+    <PreferenceCategory android:title="Aspetto">
+
+        <ListPreference
+            android:key="theme_preference"
+            android:title="Tema"
+            android:summary="Scegli il tema dell'app"
+            android:entries="@array/theme_options"
+            android:entryValues="@array/theme_values"
+            android:defaultValue="light" />
+    </PreferenceCategory>
+
+    <!-- Categoria: Generale -->
+    <PreferenceCategory android:title="Generale">
+
+        <SwitchPreference
+            android:key="auto_sync"
+            android:title="Sincronizzazione automatica"
+            android:summary="Sincronizza i dati con il cloud automaticamente"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

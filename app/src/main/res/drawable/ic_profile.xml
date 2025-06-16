@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Cerchio di sfondo -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M50,0a50,50 0 1,0 0.01,0" />
+
+    <!-- Testa -->
+    <path
+        android:fillColor="#BDBDBD"
+        android:pathData="M50,28a12,12 0 1,0 0.01,0" />
+
+    <!-- Spalle -->
+    <path
+        android:fillColor="#BDBDBD"
+        android:pathData="M30,72c0,-10 15,-16 20,-16s20,6 20,16v4H30v-4z" />
+</vector>
