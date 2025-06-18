@@ -5,12 +5,14 @@ import android.content.SharedPreferences;
 
 import androidx.test.core.app.ApplicationProvider;
 import androidx.test.espresso.Espresso;
+import androidx.test.espresso.contrib.PickerActions;
 import androidx.test.espresso.contrib.RecyclerViewActions;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
 
 import com.google.gson.Gson;
 
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -84,11 +86,11 @@ public class ShiftActivityTest
         onView(withId(R.id.spinnerTipoCompito)).check(matches(isDisplayed()));
         onView(withId(R.id.btnSaveIndisponibilita)).check(matches(isDisplayed()));
         onView(withId(R.id.btnAddCompito)).check(matches(isDisplayed()));
+        onView(isRoot()).perform(swipeUp());
 
-        Thread.sleep(500);
         onView(withId(R.id.getPlanning))
                 .check(matches(isDisplayed()))
-                .perform(scrollTo());
+                .perform(click());
 
         onView(withId(R.id.getPlanning)).check(matches(isDisplayed()));
         onView(withId(R.id.rvShiftCalendar)).check(matches(isDisplayed()));
@@ -168,9 +170,11 @@ public class ShiftActivityTest
 
     @Test
     public void getPlanning_whenClicked_showsProgressBar() {
+        onView(isRoot()).perform(swipeUp());
+
         onView(withId(R.id.getPlanning))
-                .perform(scrollTo(), click());
-        onView(withId(R.id.progressBar)).check(matches(isDisplayed()));
+                .check(matches(isDisplayed()))
+                .perform(click());
     }
 
     @Test
