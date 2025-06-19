@@ -1,49 +1,37 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8A2BE2"
-    android:padding="16dp">
+    android:background="#8A2BE2">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnBack"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/back"
-        app:icon="@drawable/arrow_back"
-        app:iconGravity="textStart"
-        android:tint="#FFFFFF"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSettings"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/setting"
-        app:icon="@drawable/ic_setting"
-        app:iconGravity="textStart"
-        android:tint="#FFFFFF"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/rounded_topbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/toolbar_profile"
+        app:navigationIcon="@drawable/arrow_back"
+        app:navigationIconTint="#8A2BE2"
+        app:title="@string/app_name"
+        app:titleTextColor="#8A2BE2" />
 
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="146dp"
         android:layout_height="143dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="1dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/logo_lucia_blu"
-        app:layout_constraintBottom_toTopOf="@+id/mainContainer"
+        app:layout_constraintBottom_toTopOf="@+id/imgPeople"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintHorizontal_bias="0.854"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/mainContainer"
@@ -158,11 +146,11 @@
         android:id="@+id/imgPeople"
         android:layout_width="283dp"
         android:layout_height="195dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="240dp"
         android:contentDescription="@string/people"
         android:src="@drawable/peope"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.968"
+        app:layout_constraintHorizontal_bias="0.964"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

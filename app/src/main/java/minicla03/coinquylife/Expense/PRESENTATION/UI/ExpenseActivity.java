@@ -350,7 +350,7 @@ public class ExpenseActivity extends AppCompatActivity
         );
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelId)
-                .setSmallIcon(R.drawable.ico_app_background)
+                .setSmallIcon(R.drawable.icons8_spese_96)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)

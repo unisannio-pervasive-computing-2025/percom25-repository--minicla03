@@ -13,6 +13,7 @@ import androidx.test.rule.ActivityTestRule;
 import com.google.gson.Gson;
 
 import org.hamcrest.Matchers;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -47,6 +48,18 @@ public class ShiftActivityTest
         setupMockData();
         setupSharedPreferences();
         activityRule.launchActivity(null);
+    }
+
+    @After
+    public void tearDown()
+    {
+        Context context = ApplicationProvider.getApplicationContext();
+        SharedPreferences sharedPrefs = context.getSharedPreferences("app_prefs", Context.MODE_PRIVATE);
+        sharedPrefs.edit().clear().apply();
+
+        if (activityRule.getActivity() != null && !activityRule.getActivity().isFinishing()) {
+            activityRule.getActivity().finish();
+        }
     }
 
     private void setupMockData() {
@@ -210,7 +223,7 @@ public class ShiftActivityTest
     @Test
     public void inputFields_acceptValidText() {
         onView(withId(R.id.etDescrizioneCompito))
-                .perform(typeText("Descrizione test compito"), closeSoftKeyboard());
+                .perform(replaceText("Descrizione test compito"), closeSoftKeyboard());
 
         onView(withId(R.id.etDescrizioneCompito))
                 .check(matches(withText("Descrizione test compito")));
