@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -64,6 +65,9 @@ public class ExpenseActivity extends AppCompatActivity
     private MaterialButton btnAddExpense;
     private MaterialButton btnRiepilogoBilancio;
 
+    private int selectedPosition = -1;
+    private Expense selectedExpense = null;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
@@ -89,32 +93,35 @@ public class ExpenseActivity extends AppCompatActivity
         MaterialButton btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(v -> finish());
 
-
         adapter.setOnPayClickListener(position ->
         {
-            Expense expense = expenseList.get(position);
+            selectedExpense = expenseList.get(position);
+            selectedPosition = position;
 
             new AlertDialog.Builder(this)
                     .setTitle("Conferma pagamento")
                     .setMessage("Vuoi segnare questa spesa come saldata?")
                     .setPositiveButton("Sì", (dialog, which) ->
                     {
-                        expenseViewModel.updateExpenseStatus(expense.getId());
-                        expenseViewModel.getUpdateExpenseStatusLiveData().observe(this, expenseResult ->
-                        {
-                            if (expenseResult != null)
-                            {
-                                expense.setStatus(StatusExpense.SETTLED);
-                                expenseList.remove(position);
-                                adapter.notifyItemRemoved(position);
-                                Toast.makeText(this, "Spesa segnata come saldata!", Toast.LENGTH_SHORT).show();
-                            } else {
-                                Toast.makeText(this, "Errore nell'aggiornamento della spesa", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                        expenseViewModel.updateExpenseStatus(selectedExpense.getId());
                     })
                     .setNegativeButton("No", null)
                     .show();
+        });
+
+        expenseViewModel.getUpdateExpenseStatusLiveData().observe(this, expenseResult ->
+        {
+            if (expenseResult != null && selectedPosition>=0)
+            {
+                selectedExpense.setStatus(StatusExpense.SETTLED);
+                expenseList.remove(selectedPosition);
+                adapter.notifyItemRemoved(selectedPosition);
+                selectedExpense = null;
+                selectedPosition = -1;
+                Toast.makeText(this, "Spesa segnata come saldata!", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Errore nell'aggiornamento della spesa", Toast.LENGTH_SHORT).show();
+            }
         });
 
         String houseCode = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
@@ -190,11 +197,25 @@ public class ExpenseActivity extends AppCompatActivity
             CheckBox checkBox = new CheckBox(this);
             checkBox.setText(participant);
             checkBox.setTextColor(Color.parseColor("#8A2BE2"));
-            if (participant.equals(spinnerPaidBy.getSelectedItem())) {
-                checkBox.setChecked(true);
-            }
             participantsContainer.addView(checkBox);
         }
+
+        spinnerPaidBy.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedPayer = (String) spinnerPaidBy.getSelectedItem();
+                for (int i = 0; i < participantsContainer.getChildCount(); i++) {
+                    View child = participantsContainer.getChildAt(i);
+                    if (child instanceof CheckBox) {
+                        CheckBox cb = (CheckBox) child;
+                        cb.setChecked(cb.getText().toString().equals(selectedPayer));
+                    }
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
 
         btnOk.setOnClickListener(v -> {
             String description = etDescription.getText().toString().trim();
